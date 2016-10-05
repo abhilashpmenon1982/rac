@@ -1,45 +1,80 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"abc/sap/controller/BaseController",
+	"sap/ui/model/json/JSONModel"
+], function(BaseController, JSONModel) {
 	"use strict";
 
-	return Controller.extend("abc.sap.controller.Main", {
+	return BaseController.extend("abc.sap.controller.Main", {
 
-		/**
-		 * Called when a controller is instantiated and its View controls (if available) are already created.
-		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf abc.sap.view.Main
-		 */
-		//	onInit: function() {
-		//
-		//	},
+		onInit: function() {
 
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf abc.sap.view.Main
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
+			//      1.Get the id of the VizFrame		
+			var oVizFrame = this.getView().byId("idpiechart");
 
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf abc.sap.view.Main
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
+			//      2.Create a JSON Model and set the data
+			var oModel = new sap.ui.model.json.JSONModel();
+			var data = {
+				'Federal': [{
+					"Report": "Arcos",
+					"Issue": "20"
+				}, {
+					"Report": "Narcos",
+					"Issue": "30"
+				}, {
+					"Report": "Deacsos",
+					"Issue": "25"
+				}, {
+					"Report": "OMP",
+					"Issue": "25"
+				}]
+			};
+			oModel.setData(data);
 
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf abc.sap.view.Main
-		 */
-		//	onExit: function() {
-		//
-		//	}
+			//      3. Create Viz dataset to feed to the data to the graph
+			var oDataset = new sap.viz.ui5.data.FlattenedDataset({
+				dimensions: [{
+					name: 'Report Name',
+					value: "{Report}"
+				}],
 
+				measures: [{
+					name: 'Issue',
+					value: '{Issue}'
+				}],
+
+				data: {
+					path: "/Federal"
+				}
+			});
+			oVizFrame.setDataset(oDataset);
+			oVizFrame.setModel(oModel);
+
+			//      4.Set Viz properties
+			oVizFrame.setVizProperties({
+				title: {
+					text: "Federal Open Issues"
+				},
+				plotArea: {
+					colorPalette: d3.scale.category20().range(),
+					drawingEffect: "glossy"
+				}
+			});
+
+			var feedSize = new sap.viz.ui5.controls.common.feeds.FeedItem({
+					'uid': "size",
+					'type': "Measure",
+					'values': ["Issue"]
+				}),
+				feedColor = new sap.viz.ui5.controls.common.feeds.FeedItem({
+					'uid': "color",
+					'type': "Dimension",
+					'values': ["Report Name"]
+				});
+
+			oVizFrame.addFeed(feedSize);
+			oVizFrame.addFeed(feedColor);
+
+		}
 	});
 
 });
