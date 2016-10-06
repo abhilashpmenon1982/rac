@@ -83,7 +83,7 @@ sap.ui.define([
 				case "Arcos":
 					para = 1;
 					break;
-					
+
 				case "OMP":
 					para = 2;
 					break;
@@ -97,6 +97,13 @@ sap.ui.define([
 					break;
 
 			}
+
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = this.getRouter();
+			oRouter.navTo("detail", {
+				reportName: para
+			});
+
 		}
 
 	});
