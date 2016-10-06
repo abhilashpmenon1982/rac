@@ -1,19 +1,67 @@
 {
-				"PuertoRicoCollection": [{
-					"Description": "Issue 1",
-					"License": "AA12",
-					"Arcos": "Test1",
-					"NDC": "11223344556"
-				}, 
+	"PuertoRicoCollection": [{
+			"Description": "Issue 1",
+			"License": "AA12",
+			"Arcos": "Test1",
+			"NDC": "11223344556",
+			"fklmg": "11",
+			"assdea": "AA13",
+			"exgen": "AA14",
+			"vbeln": "980011",
+			"billdate": "01.01.2016"
+		},
 
-               {
-               	
-					"Description": "Issue 2",
-					"License": "AA22",
-					"Arcos": "Test2",
-					"NDC": "11223344555"
-               }				
-				
-				
-				]
-			}
+		{
+
+			"Description": "Issue 2",
+			"License": "AA22",
+			"Arcos": "Test2",
+			"NDC": "11223344555",
+			"fklmg": "22",
+			"assdea": "AA23",
+			"exgen": "AA24",
+			"vbeln": "980022",
+			"billdate": "02.02.2016"
+		},
+
+		{
+
+			"Description": "Issue 3",
+			"License": "AA33",
+			"Arcos": "Test3",
+			"NDC": "11223344554",
+			"fklmg": "33",
+			"assdea": "AA33",
+			"exgen": "AA34",
+			"vbeln": "980033",
+			"billdate": "03.03.2016"
+		},
+
+		{
+
+			"Description": "Issue 4",
+			"License": "AA44",
+			"Arcos": "Test4",
+			"NDC": "11223344544",
+			"fklmg": "44",
+			"assdea": "AA44",
+			"exgen": "AA44",
+			"vbeln": "980044",
+			"billdate": "04.04.2016"
+		},
+
+		{
+
+			"Description": "Issue 5",
+			"License": "AA55",
+			"Arcos": "Test5",
+			"NDC": "11223344555",
+			"fklmg": "55",
+			"assdea": "AA55",
+			"exgen": "AA54",
+			"vbeln": "980055",
+			"billdate": "05.05.2016"
+		}
+
+	]
+}

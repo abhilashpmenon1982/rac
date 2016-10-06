@@ -17,6 +17,21 @@
 						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
 							<Text text="NDC"/>
 						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Billing Quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="External License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="External License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Order No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Billing Date"/>
+						</Column>
 					</columns>
 					<items>
 						<ColumnListItem>
@@ -25,6 +40,11 @@
 								<Text text="{License}"/>
 								<Text text="{Arcos}"/>
 								<Text text="{NDC}"/>
+								<Text text="{fklmg}"/>
+								<Text text="{assdea}"/>
+								<Text text="{exgen}"/>
+								<Text text="{vbeln}"/>
+								<Text text="{billdate}"/>
 							</cells>
 						</ColumnListItem>
 					</items>
