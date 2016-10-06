@@ -13,22 +13,9 @@ sap.ui.define([
 
 			//      2.Create a JSON Model and set the data
 			var oModel = new sap.ui.model.json.JSONModel();
-			var data = {
-				'Federal': [{
-					"Report": "Arcos",
-					"Issue": "20"
-				}, {
-					"Report": "Narcos",
-					"Issue": "30"
-				}, {
-					"Report": "Deacsos",
-					"Issue": "25"
-				}, {
-					"Report": "OMP",
-					"Issue": "25"
-				}]
-			};
-			oModel.setData(data);
+
+			//oModel.setData(data);
+			oModel.loadData("../Json/StatePie.json" ,"", false);
 
 			//      3. Create Viz dataset to feed to the data to the graph
 			var oDataset = new sap.viz.ui5.data.FlattenedDataset({
@@ -52,7 +39,7 @@ sap.ui.define([
 			//      4.Set Viz properties
 			oVizFrame.setVizProperties({
 				title: {
-					text: "Federal Open Issues"
+					text: "State Compliance Status"
 				},
 				plotArea: {
 					colorPalette: d3.scale.category20().range(),
@@ -74,7 +61,40 @@ sap.ui.define([
 			oVizFrame.addFeed(feedSize);
 			oVizFrame.addFeed(feedColor);
 
+		},
+
+		onDetail: function(oEvent) {
+			var name = oEvent.getParameter("data")[0].data["Report Name"];
+			var para;
+			switch (name) {
+				case "Florida":
+					para = 1;
+					break;
+
+				case "Puerto Rico":
+					para = 2;
+					break;
+
+				case "Idaho":
+					para = 3;
+					break;
+
+				case "New York":
+					para = 4;
+					break;
+
+			}
+
+           var oVizFrame = this.getView().byId("idpiechart");
+           oVizFrame.fireDeselectData();
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = this.getRouter();
+			oRouter.navTo("detail", {
+				reportName: para
+			});
+
 		}
+
 	});
 
 });

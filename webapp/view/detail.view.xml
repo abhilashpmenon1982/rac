@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="abc.sap.controller.detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{Report>/reportName}">
+				<Table id="idPuertoRicoTable" inset="false" items="{ path: '/PuertoRicoCollection' }">
+					<columns>
+						<Column width="12em">
+							<Text text="Description"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="License"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+							<Text text="Arcos Tcode"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="NDC"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Billing Quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="External License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="External License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Order No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Billing Date"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{Description}"/>
+								<Text text="{License}"/>
+								<Text text="{Arcos}"/>
+								<Text text="{NDC}"/>
+								<Text text="{fklmg}"/>
+								<Text text="{assdea}"/>
+								<Text text="{exgen}"/>
+								<Text text="{vbeln}"/>
+								<Text text="{billdate}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

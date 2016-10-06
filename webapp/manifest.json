@@ -81,11 +81,19 @@
 				"async": true
 			},
 			"routes": [{
-				"name": "main",
-				"pattern": "",
-				"greedy": false,
-				"target": ["main"]
-			}],
+					"name": "main",
+					"pattern": "",
+					"greedy": false,
+					"target": ["main"]
+				},
+
+				{
+					"pattern": "detail/{reportName}",
+					"name": "detail",
+					"target": "detail"
+				}
+
+			],
 			"targets": {
 				"objectNotFound": {
 					"viewName": "ObjectNotFound",
@@ -102,7 +110,14 @@
 					"viewName": "Main",
 					"viewId": "Main",
 					"viewLevel": 1
+				},
+				"detail": {
+					"viewType": "XML",
+					"viewName": "detail",
+					"viewId": "detail",
+					"viewLevel": 2
 				}
+
 			}
 		}
 	}
