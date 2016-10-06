@@ -13,22 +13,9 @@ sap.ui.define([
 
 			//      2.Create a JSON Model and set the data
 			var oModel = new sap.ui.model.json.JSONModel();
-			var data = {
-				'Federal': [{
-					"Report": "Arcos",
-					"Issue": "20"
-				}, {
-					"Report": "Narcos",
-					"Issue": "30"
-				}, {
-					"Report": "Deacsos",
-					"Issue": "25"
-				}, {
-					"Report": "OMP",
-					"Issue": "25"
-				}]
-			};
-			oModel.setData(data);
+
+			//oModel.setData(data);
+			oModel.loadData("../Json/StatePie.json" ,"", false);
 
 			//      3. Create Viz dataset to feed to the data to the graph
 			var oDataset = new sap.viz.ui5.data.FlattenedDataset({
@@ -98,6 +85,8 @@ sap.ui.define([
 
 			}
 
+           var oVizFrame = this.getView().byId("idpiechart");
+           oVizFrame.fireDeselectData();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter = this.getRouter();
 			oRouter.navTo("detail", {
