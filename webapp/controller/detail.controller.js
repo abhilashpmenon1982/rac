@@ -49,6 +49,7 @@ sap.ui.define([
 
 			this.getView().setModel(oModel, "Report");
 			var model = this.getView().getModel();
+			//
 
 		}
 
