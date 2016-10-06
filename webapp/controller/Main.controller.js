@@ -74,7 +74,31 @@ sap.ui.define([
 			oVizFrame.addFeed(feedSize);
 			oVizFrame.addFeed(feedColor);
 
+		},
+
+		onDetail: function(oEvent) {
+			var name = oEvent.getParameter("data")[0].data["Report Name"];
+			var para;
+			switch (name) {
+				case "Arcos":
+					para = 1;
+					break;
+					
+				case "OMP":
+					para = 2;
+					break;
+
+				case "Narcos":
+					para = 3;
+					break;
+
+				case "Deacsos":
+					para = 4;
+					break;
+
+			}
 		}
+
 	});
 
 });
