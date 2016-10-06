@@ -39,7 +39,7 @@ sap.ui.define([
 			//      4.Set Viz properties
 			oVizFrame.setVizProperties({
 				title: {
-					text: "Federal Open Issues"
+					text: "State Compliance Status"
 				},
 				plotArea: {
 					colorPalette: d3.scale.category20().range(),
@@ -67,19 +67,19 @@ sap.ui.define([
 			var name = oEvent.getParameter("data")[0].data["Report Name"];
 			var para;
 			switch (name) {
-				case "Arcos":
+				case "Florida":
 					para = 1;
 					break;
 
-				case "OMP":
+				case "Puerto Rico":
 					para = 2;
 					break;
 
-				case "Narcos":
+				case "Idaho":
 					para = 3;
 					break;
 
-				case "Deacsos":
+				case "New York":
 					para = 4;
 					break;
 

@@ -21,19 +21,19 @@ sap.ui.define([
 
 			switch (para) {
 				case "1":
-					data.reportName = "Arcos";
+					data.reportName = "Florida";
 					break;
 
 				case "2":
-					data.reportName = "OMP";
+					data.reportName = "Puerto Rico";
 					break;
 
 				case "3":
-					data.reportName = "Narcos";
+					data.reportName = "Idaho";
 					break;
 
 				case "4":
-					data.reportName = "Deacsos";
+					data.reportName = "New York";
 					break;
 
 			}
