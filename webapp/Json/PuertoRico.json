@@ -1,0 +1,19 @@
+{
+				"PuertoRicoCollection": [{
+					"Description": "Issue 1",
+					"License": "AA12",
+					"Arcos": "Test1",
+					"NDC": "11223344556"
+				}, 
+
+               {
+               	
+					"Description": "Issue 2",
+					"License": "AA22",
+					"Arcos": "Test2",
+					"NDC": "11223344555"
+               }				
+				
+				
+				]
+			}

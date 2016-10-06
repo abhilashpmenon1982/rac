@@ -2,8 +2,33 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title = "{Report>/reportName}">
-				<content></content>
+			<Page title="{Report>/reportName}">
+				<Table id="idPuertoRicoTable" inset="false" items="{ path: '/PuertoRicoCollection' }">
+					<columns>
+						<Column width="12em">
+							<Text text="Description"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="License"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+							<Text text="Arcos Tcode"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="NDC"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{Description}"/>
+								<Text text="{License}"/>
+								<Text text="{Arcos}"/>
+								<Text text="{NDC}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
 			</Page>
 		</pages>
 	</App>
