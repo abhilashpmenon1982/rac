@@ -24,22 +24,28 @@ sap.ui.define([
 				case "1":
 					data.reportName = "Florida" + " State Report";
 					this.getView().byId("idPuertoRicoTable").setVisible(false);
+					this.getView().byId("idIdahoTable").setVisible(false);
 					break;
 
 				case "2":
 					data.reportName = "Puerto Rico" + " State Report";
 					oJModel.loadData("../Json/PuertoRico.json", "", false);
 					this.getView().byId("idPuertoRicoTable").setVisible(true);
+					this.getView().byId("idIdahoTable").setVisible(false);
 					this.getView().setModel(oJModel);
 					break;
 
 				case "3":
 					data.reportName = "Idaho" + " State Report";
+					oJModel.loadData("../Json/Idaho.json", "", false);
+					this.getView().byId("idIdahoTable").setVisible(true);
 					this.getView().byId("idPuertoRicoTable").setVisible(false);
+					this.getView().setModel(oJModel);
 					break;
 
 				case "4":
 					data.reportName = "New York" + " State Report";
+					this.getView().byId("idIdahoTable").setVisible(false);
 					this.getView().byId("idPuertoRicoTable").setVisible(false);
 					break;
 

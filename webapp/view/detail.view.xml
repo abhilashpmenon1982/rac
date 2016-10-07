@@ -5,13 +5,10 @@
 			<Page title="{Report>/reportName}">
 				<Table id="idPuertoRicoTable" inset="false" items="{ path: '/PuertoRicoCollection' }">
 					<columns>
-						<Column width="12em">
-							<Text text="Description"/>
-						</Column>
 						<Column minScreenWidth="Tablet" demandPopin="true">
 							<Text text="License"/>
 						</Column>
-						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
 							<Text text="Arcos Tcode"/>
 						</Column>
 						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
@@ -36,7 +33,6 @@
 					<items>
 						<ColumnListItem>
 							<cells>
-								<Text text="{Description}"/>
 								<Text text="{License}"/>
 								<Text text="{Arcos}"/>
 								<Text text="{NDC}"/>
@@ -45,6 +41,48 @@
 								<Text text="{exgen}"/>
 								<Text text="{vbeln}"/>
 								<Text text="{billdate}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<Table id="idIdahoTable" inset="false" items="{ path: '/IdahoCollection' }">
+					<columns>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Service Start Date"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Ship to Party"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Name"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="External License No"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="NDC"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Billing Quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="Order No"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{fbuda}"/>
+								<Text text="{exgenstat}"/>
+								<Text text="{Kunwe}"/>
+								<Text text="{Name2}"/>
+								<Text text="{exgendea}"/>
+								<Text text="{NDC}"/>
+								<Text text="{fklmg}"/>
+								<Text text="{vbeln}"/>
 							</cells>
 						</ColumnListItem>
 					</items>
