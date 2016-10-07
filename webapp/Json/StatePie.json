@@ -1,15 +1,43 @@
 {
-				"Federal": [{
-					"Report": "Florida",
-					"Issue": "5"
-				}, {
-					"Report": "Puerto Rico",
-					"Issue": "5"
-				}, {
-					"Report": "Idaho",
-					"Issue": "6"
-				}, {
-					"Report": "New York",
-					"Issue": "6"
-				}]
-			}
+	"Federal": [{
+		"Report": "Florida",
+		"Issue": "5"
+	}, {
+		"Report": "Puerto Rico",
+		"Issue": "5"
+	}, {
+		"Report": "Idaho",
+		"Issue": "6"
+	}, {
+		"Report": "New York",
+		"Issue": "6"
+	}],
+	"FileCollection": [{
+			"report": "Arcos",
+			"sent": "01/01/2016 01:15 PM EST",
+			"status": "Sent to DEA"
+
+		}, {
+			"report": "Narcos",
+			"sent": "",
+			"status": "Pending"
+
+		}, {
+			"report": "Deacsos",
+			"sent": "01/01/2016 01:15 PM EST",
+			"status": "Sent to DEA"
+
+		}, {
+			"report": "Florida State",
+			"sent": "02/02/2016 01:15 PM EST",
+			"status": "Sent"
+
+		}, {
+			"report": "Puerto Rico",
+			"sent": "03/03/2016 01:15 PM EST",
+			"status": "Sent"
+
+		}
+
+	]
+}
