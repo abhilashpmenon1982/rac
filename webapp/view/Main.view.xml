@@ -1,15 +1,54 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m" controllerName="abc.sap.controller.Main" 
-        xmlns:viz="sap.viz.ui5.controls"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="RAC">
-		<content>
-		<FlexBox justifyContent="Center" alignItems="Start">				
-		  <items>
-			<viz:VizFrame xmlns="sap.viz" id="idpiechart" vizType="pie" selectData="onDetail"/>			
-		 </items> 
-		</FlexBox>
-		</content>
-	</Page>
-	
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:u="sap.uxap" xmlns="sap.m"
+	controllerName="abc.sap.controller.Main" xmlns:viz="sap.viz.ui5.controls" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:semantic="sap.m.semantic" height="100%">
+	<semantic:FullscreenPage title="RAC">
+		<semantic:content>
+			<u:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
+				<u:sections>
+					<u:ObjectPageSection title="State Compliance Status">
+						<u:subSections>
+							<u:ObjectPageSubSection>
+								<FlexBox justifyContent="Center" alignItems="Start">
+									<items>
+										<viz:VizFrame xmlns="sap.viz" id="idpiechart" vizType="pie" selectData="onDetail"/>
+									</items>
+								</FlexBox>
+							</u:ObjectPageSubSection>
+						</u:subSections>
+					</u:ObjectPageSection>
+					<u:ObjectPageSection title="Report File Transfer Status">
+						<u:subSections>
+							<u:ObjectPageSubSection>
+								<u:blocks>
+									<Table id="idFile" inset="false" items="{ path: '/FileCollection' }">
+										<columns>
+											<Column minScreenWidth="Tablet" demandPopin="true">
+												<Text text="Report"/>
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+												<Text text="Last Sent On"/>
+											</Column>
+											<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+												<Text text="Status"/>
+											</Column>
+										
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Text text="{report}"/>
+													<Text text="{sent}"/>
+													<Text text="{status}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</u:blocks>
+							</u:ObjectPageSubSection>
+						</u:subSections>
+					</u:ObjectPageSection>
+				</u:sections>
+			</u:ObjectPageLayout>
+		</semantic:content>
+	</semantic:FullscreenPage>
 </mvc:View>
